@@ -1,0 +1,35 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+.gitignore
+.idea/
+out/
+src/com/algorithms/crackingcode/chapter1/
+src/com/algorithms/crackingcode/chapter2/
+src/com/algorithms/crackingcode/chapter3/
+src/com/algorithms/crackingcode/chapter5/
+src/com/algorithms/crackingcode/chapter6/
+src/com/algorithms/crackingcode/chapter7/
+src/com/algorithms/crackingcode/chapter9/
+src/com/algorithms/searching/
