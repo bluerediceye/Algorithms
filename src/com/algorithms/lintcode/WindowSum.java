@@ -1,8 +1,12 @@
-package com.algorithms.amazon9.sde2;
+package com.algorithms.lintcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created on 02/03/2017
