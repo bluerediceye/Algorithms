@@ -18,8 +18,7 @@ public class VIFindLCA {
     }
 
     public Node findLCA(Node root, Node a, Node b){
-
-
+        
         if(root == null){
             return null;
         }
@@ -30,8 +29,7 @@ public class VIFindLCA {
 
         Node left = findLCA(root.left, a, b);
         Node right = findLCA(root.right, a, b);
-
-
+        
         if(left != null && right != null){
             return root;
         }
@@ -50,7 +48,6 @@ public class VIFindLCA {
         }
 
         return root;
-
     }
 
     public boolean cover(Node a, Node b){
