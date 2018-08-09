@@ -1,4 +1,4 @@
-package com.algorithms.lintcode;
+package com.algorithms.lintcode.amazon2018;
 
 import java.util.ArrayList;
 import java.util.List;
