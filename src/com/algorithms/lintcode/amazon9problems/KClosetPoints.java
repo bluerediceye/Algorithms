@@ -1,6 +1,5 @@
 package com.algorithms.lintcode.amazon9problems;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -9,21 +8,6 @@ import java.util.PriorityQueue;
  * @author Ming Li
  */
 public class KClosetPoints {
-    class Point {
-        int x;
-        int y;
-        
-        Point() {
-            x = 0;
-            y = 0;
-        }
-        
-        Point(int a, int b) {
-            x = a;
-            y = b;
-        }
-    }
-    
     public Point[] kClosest(Point[] points, Point origin, int k) {
         // Write your code here
         PriorityQueue<Point> pq = new PriorityQueue<>(k, (a, b) -> {
@@ -36,7 +20,7 @@ public class KClosetPoints {
             }
             return diff;
         });
-    
+        
         for (Point point : points) {
             pq.offer(point);
             if (pq.size() > k) {
@@ -54,5 +38,20 @@ public class KClosetPoints {
     
     private int getDistance(Point a, Point b) {
         return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
+    }
+    
+    class Point {
+        int x;
+        int y;
+        
+        Point() {
+            x = 0;
+            y = 0;
+        }
+        
+        Point(int a, int b) {
+            x = a;
+            y = b;
+        }
     }
 }

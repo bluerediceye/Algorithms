@@ -2,9 +2,7 @@ package com.algorithms.lintcode.amazon.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created on 15/08/2018
@@ -15,6 +13,7 @@ public class ThreeSumII {
     
     /**
      * @param nums : Give an array numbers of n integer
+     *
      * @return : Find all unique triplets in the array which gives the sum of zero.
      */
     public List<List<Integer>> threeSum(int[] nums) {

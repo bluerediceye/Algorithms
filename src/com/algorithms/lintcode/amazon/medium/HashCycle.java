@@ -6,16 +6,6 @@ package com.algorithms.lintcode.amazon.medium;
  * @author Ming Li
  */
 public class HashCycle {
-    public class ListNode {
-        int val;
-        ListNode next;
-        
-        ListNode(int val) {
-            this.val = val;
-            this.next = null;
-        }
-    }
-    
     public Boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
@@ -33,5 +23,15 @@ public class HashCycle {
         } while (slow != fast);
         
         return true;
+    }
+    
+    public class ListNode {
+        int val;
+        ListNode next;
+        
+        ListNode(int val) {
+            this.val = val;
+            this.next = null;
+        }
     }
 }

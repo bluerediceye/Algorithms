@@ -7,15 +7,6 @@ package com.algorithms.lintcode.amazon9problems;
  */
 public class CopyListWithRandomPointer {
     
-    class RandomListNode {
-        int label;
-        RandomListNode next, random;
-        
-        RandomListNode(int x) {
-            this.label = x;
-        }
-    }
-    
     /**
      * @param head: The head of linked list with a random pointer.
      *
@@ -23,12 +14,12 @@ public class CopyListWithRandomPointer {
      */
     public RandomListNode copyRandomList(RandomListNode head) {
         // write your code here
-    
+        
         if (head == null) {
             return null;
         }
         RandomListNode hh = head;
-        while(head != null) {
+        while (head != null) {
             RandomListNode newNode = new RandomListNode(head.label);
             RandomListNode next = head.next;
             head.next = newNode;
@@ -37,18 +28,27 @@ public class CopyListWithRandomPointer {
         }
         
         head = hh;
-        while(head != null){
+        while (head != null) {
             head.next.random = head.random.next;
             head = head.next.next;
         }
         
         head = hh;
         RandomListNode copiedHead = head.next;
-        while(head != null){
+        while (head != null) {
             copiedHead.next = copiedHead.next.next;
             head = head.next.next;
         }
         
         return copiedHead;
+    }
+    
+    class RandomListNode {
+        int label;
+        RandomListNode next, random;
+        
+        RandomListNode(int x) {
+            this.label = x;
+        }
     }
 }

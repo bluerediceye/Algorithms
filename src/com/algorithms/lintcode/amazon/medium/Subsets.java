@@ -12,7 +12,7 @@ import java.util.List;
 public class Subsets {
     
     public List<List<Integer>> subsets(int[] nums) {
-        if(nums == null || nums.length == 0){
+        if (nums == null || nums.length == 0) {
             List<List<Integer>> r = new ArrayList<>();
             r.add(new ArrayList<>());
             return r;
@@ -26,11 +26,11 @@ public class Subsets {
         return results;
     }
     
-    void helper(List<Integer> selected, int start, int[] nums, List<List<Integer>> results){
+    void helper(List<Integer> selected, int start, int[] nums, List<List<Integer>> results) {
         results.add(selected);
         
-        for(int i = start;i<nums.length;i++){
-            List<Integer> newSelected= new ArrayList<>(selected);
+        for (int i = start; i < nums.length; i++) {
+            List<Integer> newSelected = new ArrayList<>(selected);
             newSelected.add(nums[i]);
             helper(newSelected, i + 1, nums, results);
         }

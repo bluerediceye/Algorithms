@@ -10,20 +10,20 @@ import java.util.Set;
  */
 public class LongestPalindrome {
     public int longestPalindrome(String s) {
-        if(s == null) {
+        if (s == null) {
             return -1;
         }
-    
+        
         Set<Character> even = new HashSet<>();
-        for(char c : s.toCharArray()){
-            if(even.contains(c)){
+        for (char c : s.toCharArray()) {
+            if (even.contains(c)) {
                 even.remove(c);
-            }else{
+            } else {
                 even.add(c);
             }
         }
         
-        int remove = !even.isEmpty() ? even.size() - 1:0;
+        int remove = !even.isEmpty() ? even.size() - 1 : 0;
         
         return s.length() - remove;
     }

@@ -6,7 +6,7 @@ package com.algorithms.amazon;
  * @author Ming Li
  */
 public class MinCostPath {
-
+    
     public static int minCostPath(int[][] cost, int m, int n) {
         if (m < 0 || n < 0) {
             return Integer.MAX_VALUE;
@@ -16,23 +16,23 @@ public class MinCostPath {
         }
         return cost[m][n] + min(minCostPath(cost, m - 1, n), minCostPath(cost, m, n - 1), minCostPath(cost, m - 1, n - 1));
     }
-
+    
     private static int min(int a, int b, int c) {
         return Math.min(a, Math.min(b, c));
     }
-
+    
     public static void main(String[] args) {
-        int cost[][] = { {1, 2, 3}, {4, 8, 2}, {1, 5, 3}};
-
+        int cost[][] = {{1, 2, 3}, {4, 8, 2}, {1, 5, 3}};
+        
         System.out.println(minCostPath(cost, 2, 2));
         System.out.println(minCostPathDP(cost, 2, 2));
-
-        int cost2[][] = { {4, 2, 3, 9}, {8, 4, 2, 7}, {9, 3, 13, 12}};
+        
+        int cost2[][] = {{4, 2, 3, 9}, {8, 4, 2, 7}, {9, 3, 13, 12}};
         System.out.println(minCostPath(cost2, 2, 2));
         System.out.println(minCostPathDP(cost2, 2, 2));
-
+        
     }
-
+    
     public static int minCostPathDP(int[][] cost, int m, int n) {
         int[][] dp = new int[m + 1][n + 1];
         dp[0][0] = cost[0][0];

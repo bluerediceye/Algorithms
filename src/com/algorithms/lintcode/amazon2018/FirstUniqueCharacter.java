@@ -13,12 +13,12 @@ public class FirstUniqueCharacter {
         int[] chars = new int[256];
         
         
-        for(char c: str.toCharArray()){
+        for (char c : str.toCharArray()) {
             chars[c]++;
         }
         
-        for(char c: str.toCharArray()){
-            if(chars[c] == 1){
+        for (char c : str.toCharArray()) {
+            if (chars[c] == 1) {
                 return c;
             }
         }

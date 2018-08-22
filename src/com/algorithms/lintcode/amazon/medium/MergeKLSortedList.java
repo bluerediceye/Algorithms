@@ -8,16 +8,6 @@ import java.util.List;
  * @author Ming Li
  */
 public class MergeKLSortedList {
-    public class ListNode {
-        int val;
-        ListNode next;
-        
-        ListNode(int val) {
-            this.val = val;
-            this.next = null;
-        }
-    }
-    
     public ListNode mergeKLists(List<ListNode> lists) {
         if (lists.size() == 0) {
             return null;
@@ -57,5 +47,15 @@ public class MergeKLSortedList {
         }
         
         return dummy.next;
+    }
+    
+    public class ListNode {
+        int val;
+        ListNode next;
+        
+        ListNode(int val) {
+            this.val = val;
+            this.next = null;
+        }
     }
 }

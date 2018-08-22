@@ -18,12 +18,12 @@ public class LogSorting {
         String head1 = o1.substring(0, index1);
         String head2 = o2.substring(0, index2);
         
-        String body1 = o1.substring(index1+1);
-        String body2 = o2.substring(index2+1);
+        String body1 = o1.substring(index1 + 1);
+        String body2 = o2.substring(index2 + 1);
         
-        if(body1.compareTo(body2) == 0){
+        if (body1.compareTo(body2) == 0) {
             return head1.compareTo(head2);
-        }else {
+        } else {
             return body1.compareTo(body2);
         }
     };
@@ -35,13 +35,13 @@ public class LogSorting {
         List<String> letters = new ArrayList<>();
         List<String> numbers = new ArrayList<>();
         
-        for(int i=0;i<logs.length;i++){
+        for (int i = 0; i < logs.length; i++) {
             String line = logs[i];
             String body = line.substring(line.indexOf(' ') + 1);
             
-            if(body.charAt(0)>='0'&&body.charAt(0)<='9'){
+            if (body.charAt(0) >= '0' && body.charAt(0) <= '9') {
                 numbers.add(line);
-            }else{
+            } else {
                 letters.add(line);
             }
         }
@@ -49,10 +49,10 @@ public class LogSorting {
         Arrays.sort(lettersArray, comparator);
         
         int start = 0;
-        for(String s:lettersArray){
+        for (String s : lettersArray) {
             results[start++] = s;
         }
-        for(String s:numbers){
+        for (String s : numbers) {
             results[start++] = s;
         }
         

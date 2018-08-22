@@ -46,8 +46,7 @@ public class TwoSum {
             if (nums[left] + nums[right] <= target) {
                 count += right - left;
                 left++;
-            }
-            else {
+            } else {
                 right--;
             }
         }

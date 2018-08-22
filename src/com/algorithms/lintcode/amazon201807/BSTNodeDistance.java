@@ -1,9 +1,5 @@
 package com.algorithms.lintcode.amazon201807;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Created on 13/08/2018
  *

@@ -28,17 +28,17 @@ public class HighFive {
             }
             tmp.get(r.id).add(r.score);
             
-            if(tmp.get(r.id).size() > 5) {
+            if (tmp.get(r.id).size() > 5) {
                 tmp.get(r.id).poll();
             }
         }
         
-        for(Map.Entry<Integer, PriorityQueue<Integer>> e : tmp.entrySet()){
-            int sum = 0 ;
-            while(!e.getValue().isEmpty()){
+        for (Map.Entry<Integer, PriorityQueue<Integer>> e : tmp.entrySet()) {
+            int sum = 0;
+            while (!e.getValue().isEmpty()) {
                 sum += e.getValue().poll();
             }
-            ans.put(e.getKey(), ((double) sum/5));
+            ans.put(e.getKey(), ((double) sum / 5));
         }
         
         return ans;

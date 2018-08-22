@@ -6,18 +6,25 @@ package com.algorithms.crackingcode;
  * @author Ming Li
  */
 public class RemoveDuplicates {
-
-    public String removeDuplicates(char[]s){
-
-        int tail=1;
-        for(int i=1;i<s.length;i++){
-
-            int j=0;
-            for(;j<tail;j++){
-                if(s[i] == s[j]) break;
+    
+    public static void main(String[] args) {
+        String s = "hello world";
+        System.out.printf(new RemoveDuplicates().removeDuplicates(s.toCharArray()));
+    }
+    
+    public String removeDuplicates(char[] s) {
+        
+        int tail = 1;
+        for (int i = 1; i < s.length; i++) {
+            
+            int j = 0;
+            for (; j < tail; j++) {
+                if (s[i] == s[j]) {
+                    break;
+                }
             }
-
-            if(j==tail){
+            
+            if (j == tail) {
                 s[tail] = s[i];
                 tail++;
             }
@@ -26,13 +33,8 @@ public class RemoveDuplicates {
 //        for(int i = tail + 1;i<s.length;i++){
 //            s[i] = 0;
 //        }
-        s[tail]=0;
-
+        s[tail] = 0;
+        
         return new String(s);
-    }
-
-    public static void main(String[] args) {
-        String s = "hello world";
-        System.out.printf(new RemoveDuplicates().removeDuplicates(s.toCharArray()));
     }
 }

@@ -11,25 +11,29 @@ public class PrimeNumberOfSetBitsInBinaryRepresentation {
         
         
         int res = 0;
-        for(int i=L;i<=R;i++){
+        for (int i = L; i <= R; i++) {
             int size = Integer.bitCount(i);
-            if(isPrime(size)) res++;
+            if (isPrime(size)) {
+                res++;
+            }
             
         }
         return res;
     }
     
-    public static boolean isPrime(int i){
-        if(i==0 || i ==1){
+    public static boolean isPrime(int i) {
+        if (i == 0 || i == 1) {
             return false;
         }
-        if(i == 2 || i ==3){
+        if (i == 2 || i == 3) {
             return true;
         }
-        int tmp = (int)Math.sqrt(i);
+        int tmp = (int) Math.sqrt(i);
         
-        for(int j=2;j<=tmp;j++){
-            if(i%j==0) return false;
+        for (int j = 2; j <= tmp; j++) {
+            if (i % j == 0) {
+                return false;
+            }
         }
         
         return true;

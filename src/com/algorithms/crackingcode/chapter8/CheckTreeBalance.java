@@ -6,5 +6,5 @@ package com.algorithms.crackingcode.chapter8;
  * @author Ming Li
  */
 public class CheckTreeBalance {
-
+    
 }

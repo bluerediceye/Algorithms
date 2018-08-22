@@ -9,19 +9,20 @@ import java.util.List;
  */
 public class IntervalSearch {
     /**
-     * @param intervalList: 
-     * @param number: 
+     * @param intervalList:
+     * @param number:
+     *
      * @return: return True or False
      */
     public String isInterval(List<List<Integer>> intervalList, int number) {
         
         
-        if(intervalList == null || intervalList.isEmpty()){
+        if (intervalList == null || intervalList.isEmpty()) {
             return "False";
         }
         
-        for(List<Integer> interval : intervalList){
-            if(interval.get(0) < number && interval.get(1) > number){
+        for (List<Integer> interval : intervalList) {
+            if (interval.get(0) < number && interval.get(1) > number) {
                 return "True";
             }
         }

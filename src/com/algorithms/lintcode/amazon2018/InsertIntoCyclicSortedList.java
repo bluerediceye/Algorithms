@@ -1,7 +1,5 @@
 package com.algorithms.lintcode.amazon2018;
 
-import com.algorithms.tree.Node;
-
 /**
  * Created on 07/08/2018
  *

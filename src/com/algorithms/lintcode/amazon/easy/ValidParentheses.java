@@ -1,9 +1,7 @@
 package com.algorithms.lintcode.amazon.easy;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -19,16 +17,18 @@ public class ValidParentheses {
         map.put('}', '{');
         map.put(']', '[');
         
-        for(Character c : s.toCharArray()){
+        for (Character c : s.toCharArray()) {
             
             switch (c) {
                 case '(':
                 case '{':
-                case '[': stack.push(c);break;
+                case '[':
+                    stack.push(c);
+                    break;
                 case ')':
                 case '}':
                 case ']':
-                    if(!stack.empty() && stack.pop().equals(map.get(c))) {
+                    if (!stack.empty() && stack.pop().equals(map.get(c))) {
                         break;
                     } else {
                         return false;

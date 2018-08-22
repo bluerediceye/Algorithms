@@ -11,16 +11,6 @@ import java.util.Queue;
  * @author Ming Li
  */
 public class BinaryTreeLevelTraverse {
-    public static class TreeNode {
-        public int val;
-        public TreeNode left, right;
-        
-        public TreeNode(int val) {
-            this.val = val;
-            this.left = this.right = null;
-        }
-    }
-    
     public List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null) {
             return new ArrayList<>();
@@ -47,5 +37,15 @@ public class BinaryTreeLevelTraverse {
         }
         
         return results;
+    }
+    
+    public static class TreeNode {
+        public int val;
+        public TreeNode left, right;
+        
+        public TreeNode(int val) {
+            this.val = val;
+            this.left = this.right = null;
+        }
     }
 }

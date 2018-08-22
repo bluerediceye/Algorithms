@@ -1,43 +1,34 @@
 package com.algorithms.amazon9.sde1;
 
-import java.util.Arrays;
-
 /**
  * Created on 03/03/2017
  *
  * @author Ming Li
  */
 public class Tree {
-    public static class TreeNode {
-        public TreeNode left, right;
-        public int val;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
+    public static TreeNode root;
+    
     // METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED
     public static int bstDistance(int[] values, int node1, int node2) {
         TreeNode root = buildTree(values);
-
+        
         if (root == null) {
             return 0;
         }
-
-
+        
+        
         TreeNode one = new TreeNode(node1);
         TreeNode two = new TreeNode(node2);
-
+        
         TreeNode ans = LCA(root, one, two);
         int depth1 = getDepth(root, ans);
         int depth2 = getDepth(root, one);
         int depth3 = getDepth(root, two);
-
-        return Math.abs(depth2 + depth3 - 2 * depth1) ;
-
+        
+        return Math.abs(depth2 + depth3 - 2 * depth1);
+        
     }
-
+    
     public static TreeNode LCA(TreeNode curr, TreeNode node1, TreeNode node2) {
         if (curr == null) {
             return null;
@@ -49,12 +40,12 @@ public class Tree {
         TreeNode right = LCA(curr.right, node1, node2);
         if (left != null) {
             return left;
-        }else if(right != null){
+        } else if (right != null) {
             return right;
         }
         return null;
     }
-
+    
     public static int getDepth(TreeNode curr, TreeNode target) {
         if (curr == null) {
             return -1;
@@ -62,27 +53,27 @@ public class Tree {
         if (curr.val == target.val) {
             return 0;
         }
-
+        
         int left = getDepth(curr.left, target);
         int right = getDepth(curr.right, target);
-        if (left == -1 && right == -1) return -1;
+        if (left == -1 && right == -1) {
+            return -1;
+        }
         return left != -1 ? left + 1 : right + 1;
     }
-
-    public static TreeNode root;
-
+    
     public static TreeNode buildTree(int[] values) {
         if (values == null || values.length == 0) {
             return null;
         }
-
+        
         for (int value : values) {
             insertNode(root, value);
         }
-
+        
         return root;
     }
-
+    
     public static void insertNode(TreeNode node, int data) {
         if (root == null) {
             root = new TreeNode(data);
@@ -102,13 +93,20 @@ public class Tree {
             }
         }
     }
-
-
-
+    
     public static void main(String[] args) {
-        int[] a = {2,4,12,45,21,6,111};
-
+        int[] a = {2, 4, 12, 45, 21, 6, 111};
+        
         TreeNode root = buildTree(a);
-        System.out.print(bstDistance(a, 6,111));
+        System.out.print(bstDistance(a, 6, 111));
+    }
+    
+    public static class TreeNode {
+        public TreeNode left, right;
+        public int val;
+        
+        public TreeNode(int val) {
+            this.val = val;
+        }
     }
 }

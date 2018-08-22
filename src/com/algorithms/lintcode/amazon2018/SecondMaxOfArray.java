@@ -7,14 +7,14 @@ package com.algorithms.lintcode.amazon2018;
  */
 public class SecondMaxOfArray {
     
-    public static int secondMax(int[] nums){
-        if(nums == null || nums.length == 0){
+    public static int secondMax(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return -1;
         }
         
-        int max = Integer.MIN_VALUE;    
+        int max = Integer.MIN_VALUE;
         int second = Integer.MIN_VALUE;
-    
+        
         for (int num : nums) {
             if (num > max) {
                 second = max;

@@ -10,12 +10,12 @@ public class ReverseWordsInString {
         // write your code here
         char[] input = s.toCharArray();
         
-        reverse(input, 0, s.length() -1);
-    
+        reverse(input, 0, s.length() - 1);
+        
         int start = 0;
-        for(int i=0;i<=input.length;i++){
-            if(i==input.length || input[i] == ' '){ 
-                reverse(input, start, i-1);
+        for (int i = 0; i <= input.length; i++) {
+            if (i == input.length || input[i] == ' ') {
+                reverse(input, start, i - 1);
                 start = i + 1;
             }
         }
@@ -23,8 +23,8 @@ public class ReverseWordsInString {
         return new String(input);
     }
     
-    public void reverse(char[] input, int i, int j){
-        while(i<j){
+    public void reverse(char[] input, int i, int j) {
+        while (i < j) {
             char tmp = input[j];
             input[j] = input[i];
             input[i] = tmp;
@@ -35,14 +35,14 @@ public class ReverseWordsInString {
     
     public String reverseWords2(String s) {
         // write your code here
-        if(s.length() == 0 || s == null){
+        if (s.length() == 0 || s == null) {
             return " ";
         }
         String[] array = s.split(" ");
         StringBuilder sb = new StringBuilder();
         
-        for(int i = array.length - 1; i >= 0; i--){
-            if(!array[i].equals("")) {
+        for (int i = array.length - 1; i >= 0; i--) {
+            if (!array[i].equals("")) {
                 if (sb.length() > 0) {
                     sb.append(" ");
                 }

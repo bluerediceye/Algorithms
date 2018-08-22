@@ -13,15 +13,6 @@ public class ShortestPathToDestination {
     private int x[] = new int[]{0, 0, -1, 1};
     private int y[] = new int[]{1, -1, 0, 0};
     
-    public static class Point {
-        int x, y;
-        
-        public Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-    
     public int shortestPath(int[][] targetMap) {
         
         if (targetMap == null || targetMap.length == 0) {
@@ -44,20 +35,20 @@ public class ShortestPathToDestination {
                 Point cur = queue.poll();
                 
                 for (int i = 0; i < 4; i++) {
-                    if(cur.x + x[i] >= targetMap[0].length || cur.y+y[i]>=targetMap.length || cur.y+y[i] < 0 || cur.x + x[i]<0){
+                    if (cur.x + x[i] >= targetMap[0].length || cur.y + y[i] >= targetMap.length || cur.y + y[i] < 0 || cur.x + x[i] < 0) {
                         continue;
                     }
                     
-                    if(targetMap[cur.y+y[i]][cur.x+x[i]] == 1){
+                    if (targetMap[cur.y + y[i]][cur.x + x[i]] == 1) {
                         continue;
                     }
-    
-                    if(targetMap[cur.y+y[i]][cur.x+x[i]] == 0){
-                        targetMap[cur.y+y[i]][cur.x+x[i]] =1;
+                    
+                    if (targetMap[cur.y + y[i]][cur.x + x[i]] == 0) {
+                        targetMap[cur.y + y[i]][cur.x + x[i]] = 1;
                         queue.add(new Point(cur.x + x[i], cur.y + y[i]));
                     }
                     
-                    if(targetMap[cur.y+y[i]][cur.x+x[i]] == 2){
+                    if (targetMap[cur.y + y[i]][cur.x + x[i]] == 2) {
                         return count + 1;
                     }
                 }
@@ -66,5 +57,14 @@ public class ShortestPathToDestination {
         }
         
         return -1;
+    }
+    
+    public static class Point {
+        int x, y;
+        
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
     }
 }

@@ -39,7 +39,7 @@ public class TwoSumUniquePairs {
                 while (start < end && nums[start - 1] == nums[start]) {
                     start++;
                 }
-            } else if(v<target) {
+            } else if (v < target) {
                 start++;
             } else {
                 end--;

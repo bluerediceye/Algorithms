@@ -15,16 +15,16 @@ public class CourseScheduleII {
         // write your code here
         int[] degrees = new int[numCourses];
         List<Integer>[] edges = new List[numCourses];
-        for(int i=0;i<prerequisites.length;i++){
+        for (int i = 0; i < prerequisites.length; i++) {
             degrees[prerequisites[i][0]]++;
-            if(edges[prerequisites[i][0]] == null){
+            if (edges[prerequisites[i][0]] == null) {
                 edges[prerequisites[i][0]] = new ArrayList<Integer>();
             }
             edges[prerequisites[i][1]].add(prerequisites[0][i]);
         }
-    
+        
         Queue<Integer> queue = new LinkedList<>();
-        for(int i = 0; i < degrees.length; i++){
+        for (int i = 0; i < degrees.length; i++) {
             if (degrees[i] == 0) {
                 queue.add(i);
             }
@@ -32,24 +32,24 @@ public class CourseScheduleII {
         
         int count = 0;
         int[] order = new int[numCourses];
-        while(!queue.isEmpty()){
-            int course = (int)queue.poll();
+        while (!queue.isEmpty()) {
+            int course = (int) queue.poll();
             order[count] = course;
-            count ++;
+            count++;
             int n = edges[course].size();
-            for(int i = n - 1; i >= 0 ; i--){
-                int pointer = (int)edges[course].get(i);
+            for (int i = n - 1; i >= 0; i--) {
+                int pointer = (int) edges[course].get(i);
                 degrees[pointer]--;
                 if (degrees[pointer] == 0) {
                     queue.add(pointer);
                 }
             }
         }
-    
+        
         if (count == numCourses) {
             return order;
         }
-    
+        
         return new int[0];
     }
 }

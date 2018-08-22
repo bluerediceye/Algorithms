@@ -11,6 +11,31 @@ import java.util.List;
  * @author Ming Li
  */
 public class SlidingWindowMaximum {
+    public static void main(String[] args) {
+        List<Integer> r = new SlidingWindowMaximum().maxSlidingWindow(new int[]{1, 2, 7, 7, 2}, 4);
+        System.out.println(r);
+    }
+    
+    public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
+        // write your code here
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+        Deque<Integer> deque = new ArrayDeque<Integer>();
+        if (nums.length == 0) {
+            return ans;
+        }
+        for (int i = 0; i < k - 1; i++) {
+            inQueue(deque, nums[i]);
+        }
+        
+        for (int i = k - 1; i < nums.length; i++) {
+            inQueue(deque, nums[i]);
+            ans.add(deque.peekFirst());
+            outQueue(deque, nums[i - k + 1]);
+        }
+        return ans;
+        
+    }
+    
     /**
      * @param nums: A list of integers.
      * @param k:    An integer
@@ -28,30 +53,5 @@ public class SlidingWindowMaximum {
         if (deque.peekFirst() == num) {
             deque.pollFirst();
         }
-    }
-    
-    public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
-        // write your code here
-        ArrayList<Integer> ans = new ArrayList<Integer>();
-        Deque<Integer> deque = new ArrayDeque<Integer>();
-        if (nums.length == 0) {
-            return ans;
-        }
-        for (int i = 0; i < k - 1; i++) {
-            inQueue(deque, nums[i]);
-        }
-        
-        for(int i = k - 1; i < nums.length; i++) {
-            inQueue(deque, nums[i]);
-            ans.add(deque.peekFirst());
-            outQueue(deque, nums[i - k + 1]);
-        }
-        return ans;
-        
-    }
-    
-    public static void main(String[] args) {
-        List<Integer> r = new SlidingWindowMaximum().maxSlidingWindow(new int[]{1,2,7,7,2},4);
-        System.out.println(r);
     }
 }

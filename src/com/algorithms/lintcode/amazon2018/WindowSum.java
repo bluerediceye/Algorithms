@@ -14,20 +14,20 @@ public class WindowSum {
      */
     public int[] winSum(int[] nums, int k) {
         // write your code here
-        if(nums == null || k == 0 || nums.length==0){
+        if (nums == null || k == 0 || nums.length == 0) {
             return new int[]{};
         }
-    
+        
         int[] results = new int[nums.length + 1 - k];
-    
+        
         int first = 0;
         for (int i = 0; i < k; i++) {
             first += nums[i];
         }
         results[0] = first;
-    
+        
         for (int i = 1; i < nums.length - k + 1; i++) {
-            int tmp = results[i - 1] + nums[i+k-1] - nums[i - 1];
+            int tmp = results[i - 1] + nums[i + k - 1] - nums[i - 1];
             results[i] = tmp;
         }
         return results;
